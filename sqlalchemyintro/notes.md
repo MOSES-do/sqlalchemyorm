@@ -15,7 +15,7 @@ Base = declarative_base()
 
 Base.metadata.create_all(engine)
 
-run code in vscode using "run" and the databse will be created. In our case database.db
+run code in vscode using "run" and the databse will be created. In our case database.db in our current directory
 \*/
 
 Step 3:
