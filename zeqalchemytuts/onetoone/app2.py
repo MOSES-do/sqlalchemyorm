@@ -36,6 +36,8 @@ class Node(Base):
 
 Base.metadata.create_all(engine)
 
+#append can't be used here becos by default the relationship is not a list meaning one to one
+#one node can only follow one node
 node1 = Node(value=1)
 node2 = Node(value=2)
 node3 = Node(value=3)
@@ -43,12 +45,14 @@ node3 = Node(value=3)
 #linked list kinda one to one relationship
 node1.next_node = node2
 node2.next_node = node3
-node2.next_node = node1
+node3.next_node = node1
 
-session.add_all([node1, node2, node3])
+# session.add_all([node1, node2, node3])
 session.commit()
 
-print(node1)
+print(node1.next_node)
+print(node1.next_node)
+print(node1.next_node.value)
 print(node2)
 print(node3)
 
